@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کلاس آنلاین | کارآموز شاهد</title>
+<style>
+:root{--bg:#04142d;--panel:#061c3b;--panel2:#08264b;--line:#075b9b;--cyan:#00c9ff;--blue:#087cff;--text:#eaf5ff;--muted:#8fb2d8;--green:#00d7a0;--pink:#6d63ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 100%,#082e67 0,#04152f 48%,#020b1c 100%);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;color:inherit}.topbar{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 22px;background:#03112beF;border-bottom:1px solid #07528a;box-shadow:0 8px 30px #00102b}
+.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:bold;white-space:nowrap}.logo{color:var(--cyan);font-size:32px}.classmeta{padding:10px 24px;border:1px solid #075b9b;border-radius:0 0 20px 20px;background:linear-gradient(90deg,#052044,#0a3d7c,#052044);font-weight:bold;box-shadow:0 6px 20px #006bff30}.status{color:#ffcf69;font-size:12px;margin-right:10px}.topright{display:flex;align-items:center;gap:18px;color:var(--muted);white-space:nowrap}
+.layout{direction:ltr;height:calc(100vh - 70px);min-height:620px;display:grid;grid-template-columns:minmax(245px,21%) minmax(400px,1fr) minmax(280px,21%);gap:12px;padding:12px 14px 16px}
+.leftcol,.rightcol{direction:rtl;min-height:0;display:flex;flex-direction:column;gap:10px}.panel{background:linear-gradient(155deg,#06234aee,#03142fee);border:1px solid #075a9b;border-radius:18px;box-shadow:inset 0 1px #ffffff08,0 10px 28px #00102b55;overflow:hidden;min-height:0}.panelhead{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #0a3d6a;color:#dff4ff;font-weight:bold;font-size:13px}.count{color:var(--cyan);font-size:12px}.teacherpanel{height:230px;flex-shrink:0;padding:10px}.teacherphoto{height:100%;position:relative;overflow:hidden;border-radius:13px;border:2px solid var(--cyan);background:linear-gradient(135deg,#0b4473,#03122a);display:flex;align-items:center;justify-content:center}.teacherphoto img{width:100%;height:100%;object-fit:cover}.teacher-placeholder{text-align:center;color:#a8d9ff;line-height:2}.teacher-placeholder .personicon{font-size:70px;display:block}.label{position:absolute;bottom:8px;right:8px;left:8px;background:#03172be8;border:1px solid #0b70a8;border-radius:9px;padding:8px 10px;font-size:12px;display:flex;justify-content:space-between}.students{flex:1;display:flex;flex-direction:column}.people{overflow:auto;padding:5px 8px}.person{display:flex;align-items:center;gap:9px;padding:9px 7px;border-bottom:1px solid #0a2d50;font-size:12px}.person:last-child{border:0}.avatar{width:34px;height:34px;display:grid;place-items:center;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#00bfff,#6557ff);color:white;font-weight:bold;border:1px solid #58cfff}.name{flex:1;min-width:0}.sub{display:block;color:#86b5df;font-size:10px;margin-top:4px}.online{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);display:inline-block}.mute{color:#73a5d2}
+.centercol{display:flex;flex-direction:column;min-width:0;min-height:0;position:relative;padding-bottom:78px}.boardframe{flex:1;min-height:0;border:2px solid var(--cyan);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px #007aff55,0 0 24px #00aaff66;background:#041a36;display:flex;flex-direction:column}.boardhead{height:62px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 14px;background:linear-gradient(90deg,#06234a,#082d59);border-bottom:1px solid #07528a}.boardtitle{font-size:13px;font-weight:bold;white-space:nowrap}.tools{display:flex;gap:5px;align-items:center}.boardbtn{width:36px;height:35px;border:1px solid #15558a;border-radius:9px;background:#062044;color:#9cdcff;font-size:17px}.boardbtn.active,.boardbtn:hover{background:#087cff;border-color:#00c9ff;color:#fff}.zoom{display:flex;align-items:center;gap:10px;border:1px solid #15558a;border-radius:10px;padding:5px 9px;color:#b8e7ff;font-size:12px;white-space:nowrap}.boardcontent{flex:1;min-height:0;position:relative;overflow:hidden;background-color:#041a36;background-image:linear-gradient(#0a376322 1px,transparent 1px),linear-gradient(90deg,#0a376322 1px,transparent 1px);background-size:28px 28px;display:flex;align-items:center;justify-content:center;padding:18px}.lesson{width:min(850px,100%);display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;color:#dceeff}.lesson h2{font-size:clamp(17px,1.8vw,25px);font-weight:normal;color:#b9eaff;margin-top:0}.formula{font-size:clamp(18px,2vw,28px);line-height:2.2;letter-spacing:1px}.smallformula{font-size:clamp(15px,1.5vw,21px);line-height:2}.graph{width:100%;max-width:360px;justify-self:center}.whiteboard{position:absolute;inset:0;display:none;background:#f5fbff;z-index:3}.whiteboard.open{display:block}.whiteboard canvas{width:100%;height:100%;touch-action:none;cursor:crosshair}.canvas-tools{position:absolute;top:10px;left:10px;display:flex;gap:6px}.canvas-tools button{background:#08274d;border:1px solid #1672a9;border-radius:8px;padding:8px 10px}
+.toolbar{position:absolute;bottom:0;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 14px;border:1px solid #0878c8;border-radius:28px;background:#031a3bee;box-shadow:0 0 28px #006eff2b;max-width:100%;z-index:4}.control{width:58px;min-width:50px;display:flex;flex-direction:column;align-items:center;gap:5px;border:0;background:transparent;color:#b9dcfa;font-size:11px}.control .bubble{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#063e83,#062453);border:1px solid #0b4e8d;font-size:20px}.control:hover .bubble,.control.active .bubble{background:linear-gradient(145deg,#008dff,#0051b8);box-shadow:0 0 15px #00aaff55;color:white}.control.end .bubble{background:#f12650;color:white;border-color:#ff5a78}.chatpanel{flex:1;display:flex;flex-direction:column;min-height:260px}.tabs{display:flex;gap:5px;padding:8px;border-bottom:1px solid #0a3d6a}.tab{flex:1;border:1px solid transparent;border-radius:9px;background:transparent;color:#82afd8;padding:8px 3px;font-size:11px}.tab.active{background:#073d75;border-color:#087dcc;color:white}.messages{flex:1;min-height:0;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:10px}.msg{background:linear-gradient(135deg,#082d5a,#062044);border:1px solid #0a477b;border-radius:12px;padding:10px 11px;font-size:12px;line-height:1.8;overflow-wrap:anywhere}.msg b{display:flex;justify-content:space-between;color:#bceaff;font-size:11px;margin-bottom:3px}.msg small{color:#679ac8;font-size:9px}.send{display:flex;gap:6px;padding:8px;border-top:1px solid #0a3d6a}.send input{min-width:0;flex:1;background:#04152f;border:1px solid #10528a;border-radius:10px;color:white;padding:10px;font-size:12px;outline:none}.send button{width:42px;border:0;border-radius:10px;background:#087cff;color:white;font-size:18px}.attendees{height:38%;min-height:170px;display:flex;flex-direction:column}.attendees .people{flex:1}.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#03172d;border:1px solid var(--cyan);border-radius:12px;padding:11px 16px;z-index:20;display:none;font-size:12px;box-shadow:0 0 20px #00bfff35}.toast.show{display:block}
+@media(max-width:1100px){.layout{grid-template-columns:220px minmax(320px,1fr) 250px;gap:8px;padding:8px}.teacherpanel{height:190px}.control{width:48px}.control .bubble{width:40px;height:40px}.toolbar{gap:3px}.classmeta{padding:9px 12px;font-size:12px}.topright{gap:8px}}
+@media(max-width:850px){body{overflow:auto}.topbar{height:auto;min-height:64px;flex-wrap:wrap;padding:10px}.classmeta{order:3;width:100%;text-align:center}.topright{font-size:12px}.layout{height:auto;min-height:0;display:flex;flex-direction:column}.centercol{height:680px;order:1}.leftcol{order:2;display:grid;grid-template-columns:1fr 1fr}.teacherpanel{height:260px}.students{height:260px}.rightcol{order:3;display:grid;grid-template-columns:1fr 1fr}.chatpanel{height:400px}.attendees{height:400px}.toolbar{width:max-content;max-width:100%;gap:0;padding:8px 5px}.control{width:44px;font-size:9px}.control .bubble{width:35px;height:35px;font-size:17px}.boardhead{padding:0 7px}.zoom{display:none}.lesson{gap:10px}.formula{font-size:18px}}
+@media(max-width:520px){.brand{font-size:16px}.topright{display:none}.centercol{height:580px;padding-bottom:72px}.boardhead{height:50px}.boardtitle{font-size:11px}.boardbtn{width:29px;height:30px;font-size:14px}.tools{gap:2px}.lesson{grid-template-columns:1fr;gap:4px}.lesson>div:first-child{display:none}.graph{max-height:230px}.leftcol,.rightcol{display:flex}.teacherpanel{height:220px}.students{height:250px}.chatpanel{height:360px}.attendees{height:260px}.control{width:39px}.control .bubble{width:32px;height:32px}.control span:last-child{font-size:8px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◈</span><span>کارآموز شاهد</span><span style="font-size:12px;color:#8fb2d8;font-weight:normal;margin-right:8px">کلاس آنلاین</span></div>
+  <div class="classmeta">ریاضی پایه نهم · فصل ۳ <span class="status">● در حال برگزاری</span></div>
+  <div class="topright"><span id="clock">۱۵:۳۰ ◷</span><span>♧</span><span>⚙</span><span>علی محمدی · دانش‌آموز</span><span class="avatar">ع</span></div>
+</header>
+<div class="layout">
+  <aside class="leftcol">
+    <section class="panel teacherpanel">
+      <div class="teacherphoto" id="teacherPhoto">
+        <div class="teacher-placeholder"><span class="personicon">👨🏻‍🏫</span><strong>تصویر معلم</strong><br><small>با فعال‌کردن دوربین، تصویر خودت نمایش داده می‌شود</small></div>
+        <video id="localVideo" autoplay muted playsinline style="display:none;width:100%;height:100%;object-fit:cover"></video>
+        <div class="label"><span>استاد رضایی</span><span class="online"></span></div>
+      </div>
+    </section>
+    <section class="panel students">
+      <div class="panelhead"><span>👥 دانش‌آموزان</span><span class="count">۶ نفر · نمونه</span></div>
+      <div class="people">
+        <div class="person"><div class="avatar">ع</div><span class="name">علی محمدی<span class="sub">من</span></span><span class="mute">♩</span></div>
+        <div class="person"><div class="avatar" style="background:linear-gradient(135deg,#6d63ff,#aa68ff)">س</div><span class="name">سارا احمدی</span><span class="mute">♩</span></div>
+        <div class="person"><div class="avatar" style="background:linear-gradient(135deg,#00b8d9,#087cff)">م</div><span class="name">محمد حسینی</span><span class="mute">♩</span></div>
+        <div class="person"><div class="avatar" style="background:linear-gradient(135deg,#c7a14b,#e7d28a)">ز</div><span class="name">زهرا کاظمی</span><span class="mute">♩</span></div>
+        <div class="person"><div class="avatar" style="background:linear-gradient(135deg,#d84bd6,#ff82c7)">پ</div><span class="name">پارسا رضایی</span><span class="mute">♩</span></div>
+        <div class="person"><div class="avatar" style="background:linear-gradient(135deg,#00bda9,#58f1d7)">ن</div><span class="name">نگرس شریفی</span><span class="mute">♩</span></div>
+      </div>
+    </section>
+  </aside>
+  <main class="centercol">
+    <section class="boardframe">
+      <header class="boardhead">
+        <span class="boardtitle">▦ تخته هوشمند</span>
+        <div class="tools">
+          <button class="boardbtn active" title="انتخاب">➤</button><button class="boardbtn" id="openWhiteboard" title="قلم">✎</button><button class="boardbtn" title="پاک‌کن" id="eraserTop">▱</button><button class="boardbtn" title="متن" id="textTool">T</button><button class="boardbtn" title="تغییر اندازه" id="zoomReset">□</button>
+        </div>
+        <div class="zoom"><button class="boardbtn" id="zoomOut">−</button><span id="zoomLabel">100%</span><button class="boardbtn" id="zoomIn">＋</button></div>
+      </header>
+      <div class="boardcontent" id="boardcontent">
+        <div class="lesson" id="lesson">
+          <div><h2>حل معادله درجه دوم</h2><div class="formula">x = (−b ± √(b² − 4ac)) / 2a</div><br><p>مثال:</p><div class="smallformula">x² − 5x + 6 = 0<br>a = 1　 b = −5　 c = 6<br>x₁ = 3　　x₂ = 2</div></div>
+          <svg class="graph" viewBox="0 0 320 300" role="img" aria-label="نمودار سهمی">
+            <defs><filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <g stroke="#b7dfff" stroke-width="1.5" fill="none"><path d="M25 150 H292 M270 140 L292 150 L270 160"/><path d="M145 278 V18 M135 38 L145 18 L155 38"/></g>
+            <g stroke="#00d9ff" stroke-width="3" fill="none" filter="url(#glow)"><path d="M65 45 Q145 365 225 45"/></g><path d="M145 150 V270" stroke="#6eafff" stroke-dasharray="5 5"/><circle cx="145" cy="270" r="4" fill="#00e0ff"/><g fill="#d9efff" font-size="13"><text x="298" y="142">x</text><text x="153" y="18">y</text><text x="156" y="292">(2, −1)</text></g>
+          </svg>
+        </div>
+        <div class="whiteboard" id="whiteboard"><canvas id="canvas" width="1200" height="800"></canvas><div class="canvas-tools"><button id="pen">قلم</button><button id="eraser">پاک‌کن</button><button id="clear">پاک‌کردن تخته</button><button id="closeBoard">بستن</button></div></div>
+      </div>
+    </section>
+    <nav class="toolbar" aria-label="ابزارهای کلاس">
+      <button class="control" id="mic"><span class="bubble">🎙</span><span>میکروفون</span></button>
+      <button class="control" id="camera"><span class="bubble">▣</span><span>دوربین</span></button>
+      <button class="control" id="share"><span class="bubble">▤</span><span>اشتراک صفحه</span></button>
+      <button class="control" id="peopleBtn"><span class="bubble">♟</span><span>کاربران</span></button>
+      <button class="control" id="chatBtn"><span class="bubble">▣</span><span>چت</span></button>
+      <button class="control" id="more"><span class="bubble">•••</span><span>بیشتر</span></button>
+      <button class="control end" id="leave"><span class="bubble">☎</span><span>خروج</span></button>
+    </nav>
+  </main>
+  <aside class="rightcol">
+    <section class="panel chatpanel" id="chatPanel">
+      <div class="panelhead"><span>چت کلاس　▣</span><span class="count">گفت‌وگو</span></div>
+      <div class="tabs"><button class="tab active" data-tab="all">همه</button><button class="tab" data-tab="students">دانش‌آموزان</button><button class="tab" data-tab="teacher">معلم</button></div>
+      <div class="messages" id="messages">
+        <div class="msg"><b>استاد رضایی <small>۱۵:۰۱</small></b>سلام بچه‌ها! لطفاً تمرین صفحه ۴۶ را حل کنید و در گروه بفرستید.</div>
+        <div class="msg"><b>سارا احمدی <small>۱۵:۰۷</small></b>استاد، این قسمت رو متوجه نشدم.</div>
+        <div class="msg"><b>علی محمدی <small>۱۵:۱۰</small></b>من هم همین سؤال رو دارم.</div>
+        <div class="msg"><b>استاد رضایی <small>۱۵:۱۲</small></b>عالیه، در جلسه بعد توضیح می‌دهم.</div>
+      </div>
+      <form class="send" id="chatForm"><input id="chatInput" maxlength="300" placeholder="پیام خود را بنویسید..." required><button type="submit" title="ارسال">➤</button></form>
+    </section>
+    <section class="panel attendees" id="attendees">
+      <div class="panelhead"><span>کاربران حاضر</span><span class="count">● ۶ آنلاین</span></div>
+      <div class="people">
+        <div class="person"><span class="online"></span><span class="name">استاد رضایی</span><div class="avatar">م</div></div>
+        <div class="person"><span class="online"></span><span class="name">علی محمدی</span><div class="avatar">ع</div></div>
+        <div class="person"><span class="online"></span><span class="name">سارا احمدی</span><div class="avatar">س</div></div>
+        <div class="person"><span class="online"></span><span class="name">محمد حسینی</span><div class="avatar">م</div></div>
+        <div class="person"><span class="online"></span><span class="name">زهرا کاظمی</span><div class="avatar">ز</div></div>
+      </div>
+    </section>
+  </aside>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);let cameraStream=null,micStream=null,shareStream=null,micOn=false,cameraOn=false,erase=false,zoom=100,draw=false,toastTimer;
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2600)}
+$('camera').onclick=async()=>{if(cameraOn){cameraStream?.getTracks().forEach(t=>t.stop());cameraStream=null;$('localVideo').srcObject=null;$('localVideo').style.display='none';cameraOn=false;$('camera').classList.remove('active');toast('دوربین خاموش شد.');return}try{cameraStream=await navigator.mediaDevices.getUserMedia({video:true});$('localVideo').srcObject=cameraStream;$('localVideo').style.display='block';cameraOn=true;$('camera').classList.add('active');toast('دوربین روی همین دستگاه روشن شد؛ هنوز برای دیگران پخش نمی‌شود.')}catch(e){toast('دسترسی دوربین داده نشد یا دستگاهی پیدا نشد. برای دوربین، localhost یا HTTPS لازم است.')}};
+$('mic').onclick=async()=>{if(micOn){micStream?.getTracks().forEach(t=>t.stop());micStream=null;micOn=false;$('mic').classList.remove('active');toast('میکروفون خاموش شد.');return}try{micStream=await navigator.mediaDevices.getUserMedia({audio:true});micOn=true;$('mic').classList.add('active');toast('میکروفون روی همین دستگاه فعال است؛ هنوز به دیگران منتقل نمی‌شود.')}catch(e){toast('دسترسی میکروفون داده نشد.')}};
+$('share').onclick=async()=>{if(shareStream){shareStream.getTracks().forEach(t=>t.stop());shareStream=null;$('share').classList.remove('active');toast('اشتراک صفحه متوقف شد.');return}try{shareStream=await navigator.mediaDevices.getDisplayMedia({video:true});$('share').classList.add('active');toast('اشتراک صفحه فقط روی این دستگاه آغاز شد؛ پخش برای کاربران دیگر هنوز راه‌اندازی نشده است.');shareStream.getVideoTracks()[0].addEventListener('ended',()=>{$('share').classList.remove('active');shareStream=null})}catch(e){toast('اشتراک صفحه لغو شد یا مرورگر پشتیبانی نمی‌کند.')}};
+$('chatForm').onsubmit=e=>{e.preventDefault();let v=$('chatInput').value.trim();if(!v)return;let d=document.createElement('div');d.className='msg';let b=document.createElement('b');b.textContent='شما';let tm=document.createElement('small');tm.textContent=new Date().toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'});b.append(tm);let s=document.createElement('span');s.textContent=v;d.append(b,s);$('messages').append(d);$('messages').scrollTop=$('messages').scrollHeight;$('chatInput').value=''};
+$('openWhiteboard').onclick=()=>{$('whiteboard').classList.add('open');$('openWhiteboard').classList.add('active')};$('closeBoard').onclick=()=>{$('whiteboard').classList.remove('open');$('openWhiteboard').classList.remove('active')};
+const c=$('canvas'),ctx=c.getContext('2d');ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=5;ctx.strokeStyle='#092b4c';function pos(e){let r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}c.onpointerdown=e=>{draw=true;c.setPointerCapture(e.pointerId);let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y)};c.onpointermove=e=>{if(!draw)return;let p=pos(e);ctx.strokeStyle=erase?'#f5fbff':'#092b4c';ctx.lineWidth=erase?34:5;ctx.lineTo(p.x,p.y);ctx.stroke()};c.onpointerup=c.onpointercancel=()=>draw=false;$('pen').onclick=()=>{erase=false;toast('قلم انتخاب شد.')};$('eraser').onclick=()=>{erase=true;toast('پاک‌کن انتخاب شد.')};$('eraserTop').onclick=()=>{$('whiteboard').classList.add('open');erase=true;toast('تخته باز شد؛ از پاک‌کن استفاده کن.')};$('clear').onclick=()=>{ctx.clearRect(0,0,c.width,c.height);toast('تخته پاک شد.')};$('textTool').onclick=()=>toast('ابزار نوشتن متن هنوز به تخته اضافه نشده است.');
+$('zoomIn').onclick=()=>{zoom=Math.min(150,zoom+10);$('zoomLabel').textContent=zoom+'%';$('lesson').style.transform='scale('+(zoom/100)+')'};$('zoomOut').onclick=()=>{zoom=Math.max(70,zoom-10);$('zoomLabel').textContent=zoom+'%';$('lesson').style.transform='scale('+(zoom/100)+')'};$('zoomReset').onclick=()=>{zoom=100;$('zoomLabel').textContent='100%';$('lesson').style.transform='scale(1)'};
+$('peopleBtn').onclick=()=>{$('attendees').scrollIntoView({behavior:'smooth',block:'center'});toast('فهرست کاربران حاضر در سمت چپ است.')};$('chatBtn').onclick=()=>{$('chatPanel').scrollIntoView({behavior:'smooth',block:'center'});$('chatInput').focus()};$('more').onclick=()=>toast('گزینه‌های بیشتر در نسخه بعدی اضافه می‌شوند.');$('leave').onclick=()=>{if(confirm('از کلاس خارج می‌شوید؟')){[cameraStream,micStream,shareStream].forEach(s=>s?.getTracks().forEach(t=>t.stop()));toast('دستگاه‌های صوتی و تصویری این صفحه خاموش شدند. برای بازگشت، صفحه را ببندید.')}};
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');toast('این فیلتر فعلاً نمایشی است؛ پیام‌ها هنوز از سرور دریافت نمی‌شوند.')});
+$('clock').textContent=new Date().toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'})+' ◷';window.addEventListener('beforeunload',()=>[cameraStream,micStream,shareStream].forEach(s=>s?.getTracks().forEach(t=>t.stop())));
+</script>
+</body>
+</html>
